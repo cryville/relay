@@ -59,7 +59,7 @@ public class RelayClient {
 						}
 						break;
 					case 0x0010:
-						serverInData.readNBytes(inBuf, 0, len);
+						DataInputStreamUtil.readNBytes(serverInData, inBuf, 0, len);
 						// System.out.println("Connection " + id + " receiving " + len + " bytes from server");
 						try {
 							toClientSockets.get(id).clientOut.write(inBuf, 0, len);
