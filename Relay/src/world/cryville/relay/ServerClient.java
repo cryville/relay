@@ -45,7 +45,7 @@ public class ServerClient {
 			switch (op) {
 			case 0x0000:
 				System.out.println("Connection " + id + " establishing");
-				var handler = new SocketHandler(id, toServerPort);
+				SocketHandler handler = new SocketHandler(id, toServerPort);
 				toServerSockets.put(id, handler);
 				handler.start();
 				System.out.println("Connection " + id + " established");

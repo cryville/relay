@@ -88,7 +88,7 @@ public class RelayClient {
 		}
 		public void close() throws IOException {
 			toClientSocket.close();
-			for (var s : toClientSockets.values()) {
+			for (SocketHandler s : toClientSockets.values()) {
 				s.close(true);
 			}
 			toClientSockets.clear();
@@ -96,8 +96,8 @@ public class RelayClient {
 		public void run() {
 			while (true) {
 				try {
-					var socket = toClientSocket.accept();
-					var handler = new SocketHandler(index, socket);
+					Socket socket = toClientSocket.accept();
+					SocketHandler handler = new SocketHandler(index, socket);
 					toClientSockets.put(index, handler);
 					handler.start();
 					index += 1;

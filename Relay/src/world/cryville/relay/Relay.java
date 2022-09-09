@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Relay {
 	public static void main(String[] args) {
-		System.out.println("Relay 0.1.2");
+		System.out.println("Relay 0.1.3");
 		if (args.length < 1) {
 			printUsage();
 			return;
